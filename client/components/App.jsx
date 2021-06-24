@@ -14,11 +14,12 @@ const App = () => {
   }, [count])
 
   return (
-    <>
+    <div className="p-4">
       {count}
-      <h1>{greeting}</h1>
-      <button onClick={() => setCount(count + 1)}>Click</button>
-    </>
+      <h1 className="text-gray-800 text-3xl">{greeting}</h1>
+      <h1 className="text-pink-600 text-3xl">If this is pink, tailwind is working</h1>
+      <button className="bg-gray-400 rounded" onClick={() => setCount(count + 1)}>Click</button>
+    </div>
   )
 }
 
