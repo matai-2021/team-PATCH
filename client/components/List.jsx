@@ -25,7 +25,7 @@ const List = () => {
       <ul>
         {pokemonList.map(item => (
           console.log(item.name),
-          <li key={item.name}>{item.name}</li>
+          <li key={item.name}><img src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`} width='34px'></img><a href={`/${item.name}`}>{item.name}</a></li>
         ))}
       </ul>
     </div>
