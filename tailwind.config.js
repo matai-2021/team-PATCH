@@ -3,6 +3,15 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite'
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' }
+        }
+      },
       colors: { // demo purposes, otherwise just delete the whole colors object
         puce: '#cc8899'
       },
@@ -15,6 +24,10 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    extend: {
+      dropShadow: ['hover', 'focus']
+    }
+  },
   plugins: []
 }
