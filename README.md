@@ -1,29 +1,28 @@
-# Fullstack boilerplate
+# A starter webpack project for React
 
-## Getting Started
+This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
 
-### From the Github UI
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+* Fork this repo
+* Rename your repo according to the app you're building
 
-### From the command line
-
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
+```sh
+git clone https://github.com/[your-account]/[your-app].git
+cd [your-app] && npm i
 ```
 
-You can find the server running on [http://localhost:3000](http://localhost:3000).
+To start the development server with a watcher that rebuilds your code, run `npm run dev`. The assets built by webpack are placed in `server/public`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
 
-## Details
+Additional components should be placed in `client/components`.
 
-This repo includes:
+## Separate client/server
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Jest and testing library
-* configuration for server-side debugging in VS Code
-* a single client-side test (`client/components/App.test.js`)
+The boilerplate is also set up to host the client using `webpack-dev-server` with hot module reloading etc. To use this method, in one terminal run:
+```sh
+npm run client
+```
+and in the other:
+```sh
+npm run server
+```
+The client will be available on http://localhost:8080 and the server on http://localhost:3000. Note that you will still need to manage CORS between the two, as they are on different ports.
+

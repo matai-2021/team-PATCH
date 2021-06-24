@@ -1,13 +1,18 @@
-const express = require('express')
 const path = require('path')
-
-const fruitRoutes = require('./routes/fruits')
+const express = require('express')
+const cors = require('cors')
 
 const server = express()
 
 server.use(express.json())
-server.use(express.static(path.join(__dirname, 'public')))
+server.use(express.static(path.join(__dirname, './public')))
+server.use(cors('*'))
 
-server.use('/api/v1/fruits', fruitRoutes)
+server.get('/greeting', (req, res) => {
+  const greetings = ['hola', 'hi', 'hello', 'howdy']
+  const index = Math.floor(Math.random() * greetings.length)
+  console.log(index)
+  res.json({ greeting: greetings[index] })
+})
 
 module.exports = server

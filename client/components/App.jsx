@@ -1,30 +1,25 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { getGreeting } from '../apiClient'
 
-import { fetchFruits } from '../actions'
+const App = () => {
+  const [greeting, setGreeting] = useState('')
+  const [count, setCount] = useState(0)
 
-function App (props) {
   useEffect(() => {
-    props.dispatch(fetchFruits())
-  }, [])
+    getGreeting()
+      .then((greeting) => {
+        console.log(greeting)
+        setGreeting(greeting)
+      })
+  }, [count])
 
   return (
     <>
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
+      {count}
+      <h1>{greeting}</h1>
+      <button onClick={() => setCount(count + 1)}>Click</button>
     </>
   )
 }
-const mapStateToProps = (globalState) => {
-  return {
-    fruits: globalState.fruits
-  }
-}
 
-export default connect(mapStateToProps)(App)
+export default App
