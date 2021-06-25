@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import getPokeDetailById from '../apiDetails'
 
@@ -30,6 +30,7 @@ pokemon.id && console.log(pokemon)
    return (
     //  pokemon.id && 
       <div>
+      <Link to="/">Go Home !</Link>
       <h1>#{pokemon.id}</h1>
       <h1>{pokemon.name}</h1>
       <img src={`http://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} />

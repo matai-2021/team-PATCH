@@ -10,7 +10,7 @@ function getPokeParam (pokemonName) {
 
 
 const App = () => {
-  const [currentPokemon, setCurentPokemon] = useState('charizard')
+  
   return (
     <div className="p-4">
       <Route exact path ='/details/:name' component={Details}/>
