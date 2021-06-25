@@ -24,7 +24,7 @@ const List = () => {
         <Link to="/"><h2>👈 Home</h2></Link>
       </div>
       <div className="text-center content-center justify-center items-center overflow-hidden p-4">
-        <img src="pokedex.png" alt="pokedex" className="filter drop-shadow-md mx-auto flex" width="800px"/>
+        <img src="pokedex_new.png" alt="pokedex" className="filter drop-shadow-md mx-auto flex" width="800px"/>
         <div className="p-4">
           <div className=" p-4 rounded-2xl">
             <div className="grid grid-cols-3 gap-4">
