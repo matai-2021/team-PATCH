@@ -1,26 +1,17 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
 import List from './List'
 import Home from './Home'
+import React, {useState} from 'react'
+import Details from './Details'
+import { Route } from 'react-router-dom'
 
 const App = () => {
+  const [currentPokemon, setCurentPokemon] = useState('charizard')
   return (
-    // <AppRoutes />
-    // Styles
-    // <div className="text-center content-center justify-center items-center overflow-hidden p-4">
-    //   <img src="logo.svg" alt="pokemon logo" className="filter drop-shadow-md mx-auto mt-16 flex" width="600px"/>
-    //   {/* <button className="bg-gray-400 rounded mt-8 p-4 bg-red-600 rounded-full">Go!</button> */}
-    //   <Link to="/list">
-    //     <button className="mt-16 filter drop-shadow-md hover:drop-shadow-xl rounded-full w-44 w- h-44 justify-center items-center overflow-hidden  transition duration-200 ease-in-out transform hover:scale-110">
-    //       <img src="pokeball.svg" alt="pokeball button" className="hover:animate-wiggle"/>
-    //     </button>
-    //   </Link>
     <div>
       <Route exact path="/" component={Home}/>
+      <Route exact path ='/details/:name' component={Details}/>
       <Route exact path="/list" component={List}/>
     </div>
-
-  // </div>
   )
 }
 

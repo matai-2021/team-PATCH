@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import { getPokemonData } from '../apiList'
 
 const List = () => {
   const [pokemonList, setPokemonList] = useState([])
 
+  //          <Link to={`/details/${item.name}`}>{item.name.toUpperCase()}</Link>
   useEffect(() => {
     getPokemonData()
       .then((pokemonList) => {
@@ -61,7 +64,9 @@ const List = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
 export default List
+
