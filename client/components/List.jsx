@@ -30,7 +30,7 @@ const List = () => {
             <div className="grid grid-cols-3 gap-4">
               {pokemonList.map(item => (
                 <div key={item.name} className="p-4 bg-orange-200">
-                  <div className="bg-white rounded-lg shadow-xl border-2 border-green-800 md:flex">
+                  <div className="bg-white rounded-2xl shadow-xl border-2 border-green-800 md:flex">
                     <img src={`https://www.smogon.com/dex/media/sprites/xy/${item.name}.gif`} alt={item.name} className="h-36 w-36 p-1 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
                     <div className="p-6">
                       <Link to={`/details/${item.name}`} className="font-bold text-lg md:text-3xl mb-2 text-orange-700">{item.name.toUpperCase()}</Link>
