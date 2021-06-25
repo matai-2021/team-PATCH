@@ -1,4 +1,5 @@
-import React, { useParams, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 import getPokeDetailById from '../apiDetails'
 
@@ -7,12 +8,13 @@ import getPokeDetailById from '../apiDetails'
 function Details () {
   // console.log(getPokeDetailById('charmander'))
 
-  const [pokemon, setPokemon] = useState([])
+  const [pokemon, setPokemon] = useState({})
+  const { name } = useParams()
 
-  const pokeObj = getPokeDetailById('bulbasaur')
+  // const pokeObj = getPokeDetailById(name)
 
   useEffect(() => {
-    getPokeDetailById('bulbasaur')
+    getPokeDetailById(name)
     .then(pokemon => {
       // console.log('pokemon', pokemon)
       setPokemon(pokemon)
@@ -21,7 +23,7 @@ function Details () {
     .catch(err => {
       console.error(err)
     })
-  }, [])
+  }, [name])
 
 pokemon.id && console.log(pokemon)
 
@@ -31,8 +33,8 @@ pokemon.id && console.log(pokemon)
       <h1>#{pokemon.id}</h1>
       <h1>{pokemon.name}</h1>
       <img src={`http://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} />
-      <h1>{pokemon.weight}poke grams</h1>
-      <h1>{pokemon.height}poke metres</h1>
+      <h1>{pokemon.weight} pokegrams</h1>
+      <h1>{pokemon.height} pokemetres</h1>
       <h1>Types:</h1>
       {pokemon.id &&
         <ul>

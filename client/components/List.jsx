@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import { getPokemonData } from '../apiList'
 
 const List = () => {
   const [pokemonList, setPokemonList] = useState([])
-
 
   useEffect(() => {
     getPokemonData()
@@ -17,19 +18,18 @@ const List = () => {
   }, [])
 
   return (
-    <>
     <div className="p-4">
       <h1 className="text-gray-800 text-3xl">This is List.jsx</h1>
       <ul>
         {pokemonList.map(item => (
-          <li key={item.name} ><img src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`} width='34px'></img>
-          <a href={`/${item.name}`}>{item.name.toUpperCase() }</a></li>
+              <div key={item.name}>
+          <li ><img src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`} width='34px' /></li>
+          <Link to={`/details/${item.name}`}>{item.name.toUpperCase()}</Link>
+          </div>
         ))}
       </ul>
     </div>
-    </>
   )
 }
 
 export default List
-
