@@ -1,18 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getGreeting } from '../apiClient'
+import {Route} from 'react-router-dom'
+
 
 const App = () => {
-  const [greeting, setGreeting] = useState('')
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    getGreeting()
-      .then((greeting) => {
-        console.log(greeting)
-        setGreeting(greeting)
-      })
-  }, [count])
-
   return (
 
     // Styles
@@ -22,6 +12,9 @@ const App = () => {
       <button className="mt-16 filter drop-shadow-md hover:drop-shadow-xl rounded-full w-44 w- h-44 justify-center items-center overflow-hidden  transition duration-200 ease-in-out transform hover:scale-110">
         <img src="pokeball.svg" alt="pokeball button" className="hover:animate-wiggle"/>
       </button>
+
+      <Route exact path='/list' component={List}/>
+
     </div>
   )
 }
