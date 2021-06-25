@@ -8,9 +8,12 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' }
+          '0%, 100%': { transition: 'ease-in-out', transform: 'rotate(-3deg)' },
+          '50%': { transition: 'ease-in-out', transform: 'rotate(3deg)' }
         }
+      },
+      animationDelay: {
+        wiggle: '0.5s'
       },
       colors: { // demo purposes, otherwise just delete the whole colors object
         puce: '#cc8899'
@@ -26,7 +29,10 @@ module.exports = {
   },
   variants: {
     extend: {
-      dropShadow: ['hover', 'focus']
+      dropShadow: ['hover', 'focus'],
+      animation: ['hover', 'focus'],
+      transitionDelay: ['hover', 'focus'],
+      transitionProperty: ['hover', 'focus']
     }
   },
   plugins: []
