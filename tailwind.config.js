@@ -16,7 +16,8 @@ module.exports = {
         wiggle: '0.5s'
       },
       colors: { // demo purposes, otherwise just delete the whole colors object
-        puce: '#cc8899'
+        puce: '#cc8899',
+        pokedex: '#ff2431'
       },
       screens: {
         sm: '640px',
