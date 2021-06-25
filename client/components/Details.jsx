@@ -26,9 +26,7 @@ function Details () {
   pokemon.id && console.log(pokemon)
 
   return (
-    //  pokemon.id &&
-    <div>
-
+    <>
       <div className="p-4">
         <div className="bg-white rounded-lg shadow-xl border-2 border-green-800 md:flex m-12">
           <img src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} alt={pokemon.name} className="h-60 w-60 p-1 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
@@ -69,7 +67,7 @@ function Details () {
       {/*  })} */}
       {/* </ul> */}
       {/* } */}
-    </div>
+    </>
 
   )
 }
