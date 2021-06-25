@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import { HashRouter as Router } from 'react-router-dom'
 import App from './components/App'
-import List from './components/List'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <List/>,
+    <Router>
+    <App/>
+    </Router>,
     document.getElementById('app')
   )
 })
