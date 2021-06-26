@@ -18,7 +18,7 @@ module.exports = {
       colors: { // demo purposes, otherwise just delete the whole colors object
         puce: '#cc8899',
         pokedex: '#ff2431',
-        gold: '#FFD700'
+        gold: '#f4b53f'
       },
       screens: {
         sm: '640px',
