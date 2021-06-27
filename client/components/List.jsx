@@ -7,7 +7,7 @@ const List = () => {
   const [pokemonList, setPokemonList] = useState([])
 
   useEffect(() => {
-    getAllPokemon()
+    getAllPokemon(0, 151)
       .then((pokemonList) => {
         setPokemonList(pokemonList)
         return null

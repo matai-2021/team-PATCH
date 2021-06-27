@@ -5,7 +5,6 @@ const apiBaseURL = 'https://pokeapi.co/api/v2/pokemon/'
 
 export function getDetailsByName (pokemonName) {
   const requestURL = `${apiBaseURL}${pokemonName}`
-
   return request(requestURL)
     .set('Accept', 'application/json')
     .then(response => response.body)
@@ -14,8 +13,9 @@ export function getDetailsByName (pokemonName) {
     })
 }
 
-export function getAllPokemon () {
-  return request('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151')
+export function getAllPokemon (offset = 0, limit = 151) {
+  const requestURL = `${apiBaseURL}?offset=${offset}&limit=${limit}`
+  return request(requestURL)
     .set('Accept', 'application/json')
     .then(res => {
       return res.body.results
