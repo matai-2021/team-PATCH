@@ -6,7 +6,6 @@ import { getPokemonData } from '../apiList'
 const List = () => {
   const [pokemonList, setPokemonList] = useState([])
 
-  //          <Link to={`/details/${item.name}`}>{item.name.toUpperCase()}</Link>
   useEffect(() => {
     getPokemonData()
       .then((pokemonList) => {
@@ -19,12 +18,12 @@ const List = () => {
   }, [])
 
   return (
-    <div style={{ backgroundImage: 'url("/grass.png")' }}>
+    <div style={{ backgroundImage: 'url("img/grass.png")' }}>
       <div className="p-3 font-bold text-xl font-pokemon">
         <Link to="/"><h2>👈 Home</h2></Link>
       </div>
       <div className="text-center content-center justify-center items-center overflow-hidden p-4">
-        <img src="pokedex_new.png" alt="pokedex" className="filter drop-shadow-md mx-auto flex" width="800px"/>
+        <img src="img/pokedex.png" alt="pokedex" className="filter drop-shadow-md mx-auto flex" width="800px"/>
       </div>
       <div className="grid md:grid-cols-1 md:gap-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center">
         {pokemonList.map(item => (

@@ -21,7 +21,7 @@ function Details () {
   pokemon.id && console.log(pokemon)
 
   return (
-    <>
+    <div style={{ backgroundImage: 'url("img/wallpaper-dusk.png")' }} className="h-screen">
       <div className="p-3 font-bold text-xl font-gameboy">
         <Link to="/"><h2>👈 Home</h2></Link>
         <Link to="/list"><h2>👈 Pokedex</h2></Link>
@@ -48,7 +48,7 @@ function Details () {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
