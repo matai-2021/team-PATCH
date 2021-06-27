@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { getPokemonData } from '../apiList'
+import { getAllPokemon } from '../apiClient'
 
 const List = () => {
   const [pokemonList, setPokemonList] = useState([])
 
   useEffect(() => {
-    getPokemonData()
+    getAllPokemon()
       .then((pokemonList) => {
         setPokemonList(pokemonList)
         return null

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import getPokeDetailById from '../apiDetails'
+import { getDetailsByName } from '../apiClient'
 
 function Details () {
   const [pokemon, setPokemon] = useState({})
   const { name } = useParams()
 
   useEffect(() => {
-    getPokeDetailById(name)
+    getDetailsByName(name)
       .then(pokemon => {
         setPokemon(pokemon)
         return null
@@ -45,6 +45,7 @@ function Details () {
               })}
             </ul>
             }
+            <Link to={`/details/${pokemon.name}`} className="py-auto content-center items-center text-center justify-self-center font-bold text-3xl mb-2 text-gold filter drop-shadow-lg font-gameboy">Next</Link>
           </div>
         </div>
       </div>
