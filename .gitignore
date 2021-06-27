@@ -15,3 +15,7 @@ server/public/bundle.js.map
 server/public/styles.css
 server/public/styles.css.map
 *.sqlite3
+/server/public/4c2f3bf57bb0f227cf3c2f5933a67ed8.woff2
+/server/public/af84a054cb7c1cc6aadc067c74477fc1.woff
+/server/public/137de2514b8fd6a088fc953c0ca2013e.woff
+/server/public/df6f1cfc5db125121e9e0826804dcff0.woff2

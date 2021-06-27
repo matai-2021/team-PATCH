@@ -22,12 +22,12 @@ function Details () {
 
   return (
     <>
-      <div className="p-3 font-bold text-xl">
+      <div className="p-3 font-bold text-xl font-gameboy">
         <Link to="/"><h2>👈 Home</h2></Link>
         <Link to="/list"><h2>👈 Pokedex</h2></Link>
       </div>
       <div className="py-20 px-60">
-        <div className="bg-white rounded-2xl shadow-2xl border-4 border-gold md:flex m-12">
+        <div className="bg-white rounded-2xl shadow-2xl border-4 border-gold md:flex m-12 font-pokemon">
           <img src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} alt={pokemon.name} className="h-60 w-60 p-1 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
           <div className="p-6">
             <h1 className="font-bold text-lg md:text-3xl mb-2 text-orange-700">#{pokemon.id} - {String(pokemon.name).toUpperCase()}</h1>

@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
+
+@layer base {
+	/*@font-face {*/
+	/*	font-family: 'pokemon';*/
+	/*	src: local('pokemon'), url(../../server/public/fonts/pokemon.ttf) format('ttf');*/
+	/*	font-weight: normal;*/
+	/*	font-style: normal;*/
+	/*}*/
+
+	@font-face {
+		font-family: 'pokemon_gbregular';
+		src: url('../../server/public/fonts/pokemon-webfont.woff2') format('woff2'),
+		url('../../server/public/fonts/pokemon-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'early_gameboyregular';
+		src: url('../../server/public/fonts/gameboy-webfont.woff2') format('woff2'),
+		url('../../server/public/fonts/gameboy-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+
+	}
+
+	/*@font-face {*/
+	/*	font-family: 'gameboy';*/
+	/*	src: local('gameboy'), url(../../server/public/fonts/gameboy.ttf) format('ttf');*/
+	/*	font-weight: normal;*/
+	/*	font-style: normal;*/
+	/*}*/
+}
+
 @tailwind utilities;
