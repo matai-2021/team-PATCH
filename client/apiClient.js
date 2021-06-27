@@ -13,6 +13,16 @@ export function getDetailsByName (pokemonName) {
     })
 }
 
+export function getDetailsById (pokemonId) {
+  const requestURL = `${apiBaseURL}${pokemonId}`
+  return request(requestURL)
+    .set('Accept', 'application/json')
+    .then(response => response.body)
+    .catch(err => {
+      console.error(err)
+    })
+}
+
 export function getAllPokemon (offset = 0, limit = 151) {
   const requestURL = `${apiBaseURL}?offset=${offset}&limit=${limit}`
   return request(requestURL)
