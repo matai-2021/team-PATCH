@@ -38,13 +38,6 @@ const List = () => {
           </div>
         ))}
       </div>
-
-      {/* <li key={item.name}> */}
-      {/*  /!* <img src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`} width="34px" alt={item.name}/> *!/ */}
-      {/*  <img src={`https://www.smogon.com/dex/media/sprites/xy/${item.name}.gif`} alt={item.name}/> */}
-      {/*   <a href={`/${item.name}`}>{item.name.toUpperCase()}</a></li> */}
-
-      {/* </div> */}
     </div>
   )
 }
