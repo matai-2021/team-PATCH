@@ -15,7 +15,8 @@
     "build": "npm run webpack",
     "server": "node server",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "lint": "eslint --ext .js,.jsx ."
+    "lint": "eslint --ext .js,.jsx .",
+    "test": "jest ."
   },
   "keywords": [
     "frontend"
@@ -31,6 +32,29 @@
       "@babel/plugin-transform-runtime"
     ]
   },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "ignorePatterns": [
+    "**/*.test.js",
+    "**/server/*.js"
+  ],
+  "rules": {},
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -52,7 +76,6 @@
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "eslint": "^7.30.0",
-    "eslint-config-eda": "^0.1.4",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
