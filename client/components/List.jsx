@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { getPokemonData } from '../apiList'
+import { getAllPokemon } from '../apiClient'
 
 const List = () => {
   const [pokemonList, setPokemonList] = useState([])
 
-  //          <Link to={`/details/${item.name}`}>{item.name.toUpperCase()}</Link>
   useEffect(() => {
-    getPokemonData()
+    getAllPokemon(0, 151)
       .then((pokemonList) => {
         setPokemonList(pokemonList)
         return null
@@ -17,37 +16,26 @@ const List = () => {
         console.error(err)
       })
   }, [])
-
+  console.log(pokemonList)
   return (
-    <div style={{ backgroundImage: 'url("/grass.png")' }}>
-      <div className="p-3 font-bold text-xl">
+    <div style={{ backgroundImage: 'url("img/grass.png")' }}>
+      <div className="p-3 font-bold text-xl font-pokemon">
         <Link to="/"><h2>👈 Home</h2></Link>
       </div>
       <div className="text-center content-center justify-center items-center overflow-hidden p-4">
-        <img src="pokedex_new.png" alt="pokedex" className="filter drop-shadow-md mx-auto flex" width="800px"/>
-        <div className="p-4">
-          <div className=" p-4 rounded-2xl">
-            <div className="grid grid-cols-3 gap-4">
-              {pokemonList.map(item => (
-                <div key={item.name} className="p-4 bg-orange-200">
-                  <div className="bg-white rounded-2xl shadow-xl border-2 border-green-800 md:flex">
-                    <img src={`https://www.smogon.com/dex/media/sprites/xy/${item.name}.gif`} alt={item.name} className="h-36 w-36 p-1 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
-                    <div className="p-6">
-                      <Link to={`/details/${item.name}`} className="font-bold text-lg md:text-3xl mb-2 text-orange-700">{item.name.toUpperCase()}</Link>
-                    </div>
-                  </div>
-                </div>
-
-              ))}
+        <img src="img/pokedex.png" alt="pokedex" className="filter drop-shadow-md mx-auto flex" width="800px"/>
+      </div>
+      <div className="grid md:grid-cols-1 md:gap-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center">
+        {pokemonList.map((item, index) => (
+          <div key={item.name} className="p-4 justify-center justify-items-center content-center text-center">
+            <div className="md:flex justify-center justify-items-center content-center text-center">
+              <img src={`https://www.smogon.com/dex/media/sprites/xy/${item.name}.gif`} alt={item.name} className="filter drop-shadow-lg h-36 w-36 p-1 justify-self-center" />
+              <div className="p-6 content-center text-center flex flex-wrap">
+                <Link to={`/id/${Number(index) + 1}`} className="py-auto content-center items-center text-center justify-self-center font-bold text-3xl mb-2 text-gold filter drop-shadow-lg font-pokemon">{item.name.toUpperCase()}</Link>
+              </div>
             </div>
-
-            {/* <li key={item.name}> */}
-            {/*  /!* <img src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`} width="34px" alt={item.name}/> *!/ */}
-            {/*  <img src={`https://www.smogon.com/dex/media/sprites/xy/${item.name}.gif`} alt={item.name}/> */}
-            {/*   <a href={`/${item.name}`}>{item.name.toUpperCase()}</a></li> */}
-
           </div>
-        </div>
+        ))}
       </div>
     </div>
   )

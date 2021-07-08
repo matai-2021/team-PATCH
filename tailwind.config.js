@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        pokemon: ['pokemon_gbregular', 'Helvetica', 'Arial', 'sans-serif'],
+        gameboy: ['early_gameboyregular', 'Helvetica', 'Arial', 'sans-serif']
+      },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite'
       },
@@ -18,7 +22,7 @@ module.exports = {
       colors: { // demo purposes, otherwise just delete the whole colors object
         puce: '#cc8899',
         pokedex: '#ff2431',
-        gold: '#FFD700'
+        gold: '#f4b53f'
       },
       screens: {
         sm: '640px',

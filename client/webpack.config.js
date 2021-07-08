@@ -23,6 +23,12 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(ttf|eot|woff|woff2|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
