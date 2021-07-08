@@ -18,13 +18,11 @@ function Details () {
       })
   }, [name])
 
-  pokemon.id && console.log(pokemon)
-
   return (
     <div style={{ backgroundImage: 'url("img/wallpaper-dusk.png")' }} className="h-screen">
       <div className="p-3 font-bold text-xl font-gameboy">
         <Link to="/"><h2>👈 Home</h2></Link>
-        <Link to="/list"><h2>👈 Pokedex</h2></Link>
+        <Link to="/pokedex"><h2>👈 Pokedex</h2></Link>
       </div>
       <div className="py-20 px-60">
         <div className="bg-white shadow-2xl pxl-border md:flex m-12 font-pokemon">
