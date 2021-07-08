@@ -3,6 +3,11 @@ module.exports = {
     browser: true,
     es2021: true
   },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   extends: [
     'plugin:react/recommended',
     'standard'
@@ -16,6 +21,10 @@ module.exports = {
   },
   plugins: [
     'react'
+  ],
+  ignorePatterns: [
+    '**/*.test.js',
+    '**/server/*.js'
   ],
   rules: {
   }
